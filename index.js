@@ -14,7 +14,15 @@ const err=[{
 app.get('/newuser',(req,res)=>{
     res.json(err);
 })
-
+ 
+app.post('/newdata',(req,res)=>{
+    const newuser=req.body;
+    err.push(newuser);
+    res.json({
+        message:"new user add succesfully",
+        err:err
+    })
+})
 
 app.listen(3000,()=>{
     console.log("server is running");
